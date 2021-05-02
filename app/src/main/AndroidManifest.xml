@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.undostres.notification"
+    package="com.undostres.inactiveNotification"
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -41,15 +41,15 @@
             android:name="CLEVERTAP_BACKGROUND_SYNC"
             android:value="1"/>
 
-        <!--Huawei-->
+        <!--Huawei
         <provider
             android:name="com.huawei.agconnect.core.provider.AGConnectInitializeProvider"
-            android:authorities="com.undostres.notification.AGCInitializeProvider"
+            android:authorities="com.undostres.inactiveNotification.AGCInitializeProvider"
             android:exported="false" />
         <provider
             android:name="com.huawei.agconnect.core.provider.AGConnectInitializeProvider"
             android:authorities="com.huawei.crasheclipse.AGCInitializeProvider"
-            android:exported="false" />
+            android:exported="false" />-->
 
         <!--Huawei-->
         <service

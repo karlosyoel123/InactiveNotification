@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Undostres Notification</string>
+    <string name="app_name">Inactive Notification</string>
 
     <string name="subscribe_to_weather">Activar notificaciones</string>
     <string name="log_token">Mostrar Token</string>

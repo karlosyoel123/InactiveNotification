@@ -1,4 +1,4 @@
-package com.undostres.notification;
+package com.undostres.inactiveNotification;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,9 +13,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.provider.Settings;
-import android.text.TextUtils;
 import android.view.View;
-import android.widget.TextView;
 
 import com.clevertap.android.sdk.CleverTapAPI;
 import com.clevertap.android.sdk.pushnotification.amp.CTPushAmpListener;
@@ -23,7 +21,6 @@ import com.gamooga.targetact.client.CompanyIdNotInManifestException;
 import com.gamooga.targetact.client.TargetActClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.inappmessaging.FirebaseInAppMessaging;
 import com.google.firebase.installations.FirebaseInstallations;
@@ -32,7 +29,7 @@ import com.pushwoosh.Pushwoosh;
 import com.pushwoosh.inbox.PushwooshInbox;
 import com.pushwoosh.inbox.ui.PushwooshInboxUi;
 import com.pushwoosh.inbox.ui.presentation.view.activity.InboxActivity;
-import com.undostres.notification.databinding.ActivityMainBinding;
+import com.undostres.inactiveNotification.databinding.ActivityMainBinding;
 
 import com.clevertap.android.sdk.CTInboxListener;
 import com.clevertap.android.sdk.CTInboxStyleConfig;

@@ -1,4 +1,4 @@
-package com.undostres.notification;
+package com.undostres.inactiveNotification;
 
 public class User {
 

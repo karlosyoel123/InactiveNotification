@@ -1,4 +1,4 @@
-package com.undostres.notification.huawei;
+package com.undostres.inactiveNotification.huawei;
 
 import android.content.Intent;
 /**/

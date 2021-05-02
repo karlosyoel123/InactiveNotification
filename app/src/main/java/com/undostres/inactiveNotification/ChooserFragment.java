@@ -1,4 +1,4 @@
-package com.undostres.notification;
+package com.undostres.inactiveNotification;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -14,7 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.undostres.notification.databinding.FragmentChooserBinding;
+import com.undostres.inactiveNotification.databinding.FragmentChooserBinding;
 
 public class ChooserFragment extends Fragment {
 

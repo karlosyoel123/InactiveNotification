@@ -1,4 +1,4 @@
-package com.undostres.notification;
+package com.undostres.inactiveNotification;
 
 import android.content.Context;
 

@@ -1,10 +1,40 @@
 {
   "project_info": {
     "project_number": "164575153110",
+    "firebase_url": "https://testnotification-db6d4-default-rtdb.firebaseio.com",
     "project_id": "testnotification-db6d4",
     "storage_bucket": "testnotification-db6d4.appspot.com"
   },
   "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:164575153110:android:32ca7112540927e5bdb277",
+        "android_client_info": {
+          "package_name": "com.undostres.inactiveNotification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "164575153110-erk3vbi9jlfbii61oqti4dub6njitndn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVYKfNM8_XjEt-u-9BNXlUAZpBnNTZKlY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "164575153110-erk3vbi9jlfbii61oqti4dub6njitndn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
     {
       "client_info": {
         "mobilesdk_app_id": "1:164575153110:android:c8d0103490405f86bdb277",

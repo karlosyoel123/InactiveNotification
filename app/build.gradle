@@ -6,9 +6,9 @@ plugins {
 android {
     signingConfigs {
         sign1 {
-            storeFile file('/home/usuario/Desktop/keys/keys.jks')
+            storeFile file('/home/usuario/Desktop/keys/keys1.jks')
             storePassword 'undostres'
-            keyAlias 'key0'
+            keyAlias 'key01'
             keyPassword 'undostres'
         }
     }
@@ -16,7 +16,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.undostres.notification"
+        applicationId 'com.undostres.inactiveNotification'
         minSdkVersion 17
         targetSdkVersion 30
         versionCode 3
@@ -130,11 +130,12 @@ dependencies {
     //huawei pushwoosh
     implementation "androidx.legacy:legacy-support-v4:1.0.0"
     implementation 'com.pushwoosh:pushwoosh-huawei:6.1.0'
-    //implementation 'com.pushwoosh:pushwoosh-huawei:6.+'//2.7    //huawei clever tap/pushwoosh
+    //implementation 'com.pushwoosh:pushwoosh-huawei:6.+'//2.7
+    // huawei clever tap/pushwoosh
     implementation 'com.huawei.hms:push:4.0.3.301'
 }
 //huawei
-apply plugin: 'com.huawei.agconnect'//Add This at the bottom of the file
+//apply plugin: 'com.huawei.agconnect'//Add This at the bottom of the files
 apply plugin: 'com.android.application' //firebase
 apply plugin: 'com.google.gms.google-services' //firebase
 

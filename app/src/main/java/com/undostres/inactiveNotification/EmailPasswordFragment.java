@@ -1,4 +1,4 @@
-package com.undostres.notification;
+package com.undostres.inactiveNotification;
 
 
 import android.os.Bundle;
@@ -11,7 +11,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.navigation.fragment.NavHostFragment;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -25,8 +24,7 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.messaging.FirebaseMessaging;
-import com.google.firestore.v1.WriteResult;
-import com.undostres.notification.databinding.FragmentEmailpasswordBinding;
+import com.undostres.inactiveNotification.databinding.FragmentEmailpasswordBinding;
 //import com.google.api.core.ApiFuture;
 
 public class EmailPasswordFragment extends BaseFragment {

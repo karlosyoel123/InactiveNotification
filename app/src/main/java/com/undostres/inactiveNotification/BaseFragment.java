@@ -1,5 +1,4 @@
-package com.undostres.notification;
-
+package com.undostres.inactiveNotification;
 
 import android.content.Context;
 import android.view.View;
@@ -7,11 +6,9 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.ProgressBar;
 
 import androidx.annotation.VisibleForTesting;
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-public class BaseActivity extends AppCompatActivity {
+public class BaseFragment extends Fragment {
 
     @VisibleForTesting
     public ProgressBar mProgressBar;
@@ -33,7 +30,8 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     public void hideKeyboard(View view) {
-        final InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        final InputMethodManager imm = (InputMethodManager) requireActivity()
+                .getSystemService(Context.INPUT_METHOD_SERVICE);
         if (imm != null) {
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
@@ -44,4 +42,6 @@ public class BaseActivity extends AppCompatActivity {
         super.onStop();
         hideProgressBar();
     }
+
+
 }

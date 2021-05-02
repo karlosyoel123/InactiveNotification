@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/ChooserFragment"
-        android:name="com.undostres.notification.ChooserFragment"
+        android:name="com.undostres.inactiveNotification.ChooserFragment"
         tools:layout="@layout/fragment_chooser"
         >
 
@@ -21,7 +21,7 @@
 
     <fragment
         android:id="@+id/EmailPasswordFragment"
-        android:name="com.undostres.notification.EmailPasswordFragment"
+        android:name="com.undostres.inactiveNotification.EmailPasswordFragment"
         tools:layout="@layout/fragment_emailpassword"/>
 
 
