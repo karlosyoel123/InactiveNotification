@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/ChooserFragment"
+    android:id="@+id/nav_graph_java">
+
+    <fragment
+        android:id="@+id/ChooserFragment"
+        android:name="com.undostres.notification.ChooserFragment"
+        tools:layout="@layout/fragment_chooser"
+        >
+
+        <action
+            android:id="@+id/action_emailpassword"
+            app:destination="@id/EmailPasswordFragment"
+            />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/EmailPasswordFragment"
+        android:name="com.undostres.notification.EmailPasswordFragment"
+        tools:layout="@layout/fragment_emailpassword"/>
+
+
+
+</navigation>

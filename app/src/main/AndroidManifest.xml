@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.undostres.notification"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
+
+    <permission android:protectionLevel="signature"
+        android:name="firma" />
+
+    <application
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Notification"
+        android:name="com.clevertap.android.sdk.Application"
+        android:versionCode="3"
+        android:versionName="v1.1"
+        tools:replace="android:icon, android:label, android:theme, android:name,android:allowBackup"
+        android:allowBackup="true">
+
+        <!--CELVER TAP-->
+        <meta-data
+            android:name="CLEVERTAP_ACCOUNT_ID"
+            android:value="R95-6W8-7Z6Z"/>
+        <meta-data
+            android:name="CLEVERTAP_TOKEN"
+            android:value="b06-5c2"/>
+        <!-- IMPORTANT: To force use Google AD ID to uniquely identify  users, use the following meta tag. GDPR mandates that if you are using this tag, there is prominent disclousure to your end customer in their application. Read more about GDPR here - https://clevertap.com/blog/in-preparation-of-gdpr-compliance/ -->
+        <meta-data
+            android:name="CLEVERTAP_USE_GOOGLE_AD_ID"
+            android:value="1"/>
+        <meta-data
+            android:name="FCM_SENDER_ID"
+            android:value="id:164575153110"/>
+        <meta-data
+            android:name="CLEVERTAP_BACKGROUND_SYNC"
+            android:value="1"/>
+
+        <!--Huawei-->
+        <provider
+            android:name="com.huawei.agconnect.core.provider.AGConnectInitializeProvider"
+            android:authorities="com.undostres.notification.AGCInitializeProvider"
+            android:exported="false" />
+        <provider
+            android:name="com.huawei.agconnect.core.provider.AGConnectInitializeProvider"
+            android:authorities="com.huawei.crasheclipse.AGCInitializeProvider"
+            android:exported="false" />
+
+        <!--Huawei-->
+        <service
+            android:name=".huawei.MyHuaweiPushService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.huawei.push.action.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".MyMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+        <!--CELVER TAP END-->
+
+
+        <!--GAMOOGA CODE -->
+        <meta-data android:name="GAMOOGA_COMPANY_ID" android:value="8de91eb0-c7ba-4389-92c1-88c95e522404" />
+       <!-- <meta-data android:name="PUSHAMPLIFY_APIKEY" android:value="53973c88-8a38-4bec-943b-af014550dbc3" />-->
+        <meta-data android:name="PUSHAMPLIFY_INTERVAL_MINS" android:value="30" />
+        <!--fin GAMOOGA CODE -->
+
+        <!--pushwoosh-->
+        <meta-data android:name="com.pushwoosh.appid" android:value="55CA9-74765" />
+        <meta-data android:name="com.pushwoosh.senderid" android:value="@string/fcm_sender_id" />
+        <!--pushwoosh end-->
+
+        <!-- [START fcm_default_channel] -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
+        <!-- [END fcm_default_channel] -->
+
+        <meta-data
+            android:name="firebase_messaging_auto_init_enabled"
+            android:value="false" />
+        <meta-data
+            android:name="firebase_analytics_collection_enabled"
+            android:value="true" />
+
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.gamooga.targetact.client.GcmActivityShower"
+            android:label="Loading"
+            android:exported="true">
+        </activity>
+
+        <meta-data android:name="GAMOOGA_RICH_PUSH_CHANNEL_NAME" android:value="Rich Aletrs" />
+        <meta-data android:name="GAMOOGA_RICH_PUSH_CHANNEL_ID" android:value="gamooga_rich_push_id" />
+        <meta-data android:name="GAMOOGA_RICH_PUSH_CHANNEL_DESCRIPTION" android:value="Rich Aletrs description" />
+        <meta-data android:name="GAMOOGA_RICH_PUSH_CHANNEL_IMPORTANCE" android:value="3" />
+        <meta-data android:name="GAMOOGA_PUSH_CHANNEL_NAME" android:value="Aletrs" />
+        <meta-data android:name="GAMOOGA_PUSH_CHANNEL_ID" android:value="gamooga_push_id" />
+        <meta-data android:name="GAMOOGA_PUSH_CHANNEL_DESCRIPTION" android:value="Aletrs description" />
+        <meta-data android:name="GAMOOGA_PUSH_CHANNEL_IMPORTANCE" android:value="2" />
+
+        <meta-data android:name="GAMOOGA_DEFAULT_NOTIF_ICON" android:value="ICON NAME" />
+        <meta-data android:name="GAMOOGA_DEFAULT_NOTIF_SMALL_ICON" android:value="SMALL ICON NAME" />
+        <meta-data android:name="GAMOOGA_DEFAULT_SMALL_ICON_COLOR" android:value="\#EF0707" />
+        <meta-data android:name="GAMOOGA_MOTION_EVENT" android:value="yes" />
+        <!--fin GAMOOGA SERVICES-->
+
+
+    </application>
+
+</manifest>
