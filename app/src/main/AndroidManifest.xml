@@ -51,14 +51,14 @@
             android:authorities="com.huawei.crasheclipse.AGCInitializeProvider"
             android:exported="false" />-->
 
-        <!--Huawei-->
+        <!--Huawei
         <service
             android:name=".huawei.MyHuaweiPushService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.huawei.push.action.MESSAGING_EVENT" />
             </intent-filter>
-        </service>
+        </service>-->
 
         <service
             android:name=".MyMessagingService">

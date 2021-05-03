@@ -129,10 +129,10 @@ dependencies {
 
     //huawei pushwoosh
     implementation "androidx.legacy:legacy-support-v4:1.0.0"
-    implementation 'com.pushwoosh:pushwoosh-huawei:6.1.0'
+    //implementation 'com.pushwoosh:pushwoosh-huawei:6.1.0'
     //implementation 'com.pushwoosh:pushwoosh-huawei:6.+'//2.7
     // huawei clever tap/pushwoosh
-    implementation 'com.huawei.hms:push:4.0.3.301'
+    //implementation 'com.huawei.hms:push:4.0.3.301'
 }
 //huawei
 //apply plugin: 'com.huawei.agconnect'//Add This at the bottom of the files

@@ -33,12 +33,12 @@ import com.undostres.inactiveNotification.databinding.ActivityMainBinding;
 
 import com.clevertap.android.sdk.CTInboxListener;
 import com.clevertap.android.sdk.CTInboxStyleConfig;
-/**/
+/*
 //huawei
 import com.huawei.agconnect.config.AGConnectServicesConfig;
 import com.huawei.agconnect.config.LazyInputStream;
 import com.huawei.hms.aaid.HmsInstanceId;
-import com.huawei.hms.common.ApiException;
+import com.huawei.hms.common.ApiException;*/
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -82,11 +82,12 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
     }
 
     void huaweiServices(){
+        /*
         new Thread() {
             @Override
             public void run() {
                 /*
-                 */
+
                 try {
                     String appId = AGConnectServicesConfig.fromContext(MainActivity.this).getString("client/app_id");
                     String token = HmsInstanceId.getInstance(MainActivity.this).getToken(appId, "HCM");
@@ -103,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
         }.start();
 
         //huawei
-        /**/AGConnectServicesConfig config = AGConnectServicesConfig.fromContext(this);
+        AGConnectServicesConfig config = AGConnectServicesConfig.fromContext(this);
         config.overlayWith(new LazyInputStream(this) {
             public InputStream get(Context context) {
                 try {
@@ -114,7 +115,7 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
                 }
             }
         });
-
+*/
     }
 
     private void checkWhiteListNotification() {

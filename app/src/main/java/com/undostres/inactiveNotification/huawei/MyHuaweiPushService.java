@@ -1,7 +1,7 @@
 package com.undostres.inactiveNotification.huawei;
 
 import android.content.Intent;
-/**/
+/*
 
 import com.huawei.hms.push.HmsMessageService;
 import com.huawei.hms.push.RemoteMessage;
@@ -46,3 +46,4 @@ public class MyHuaweiPushService extends HmsMessageService {
         sendBroadcast(intent);
     }
 }
+*/
