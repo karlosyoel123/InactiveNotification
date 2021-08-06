@@ -1,14 +1,16 @@
 plugins {
     id 'com.android.application'
+    id 'com.onesignal.androidsdk.onesignal-gradle-plugin'//one signal
 }
 
 
 android {
     signingConfigs {
         sign1 {
-            storeFile file('/home/usuario/Desktop/keys/keys1.jks')
+            //storeFile file('/home/usuario/Desktop/keys/keys.jks')
+            storeFile file('C:\\Users\\Usuario\\Desktop\\keys\\keys.jks')
             storePassword 'undostres'
-            keyAlias 'key01'
+            keyAlias 'key0'
             keyPassword 'undostres'
         }
     }
@@ -17,10 +19,10 @@ android {
 
     defaultConfig {
         applicationId 'com.undostres.inactiveNotification'
-        minSdkVersion 17
+        minSdkVersion 21
         targetSdkVersion 30
-        versionCode 3
-        versionName '1.2'
+        versionCode 7
+        versionName '1.6'
         multiDexEnabled true
         signingConfig signingConfigs.sign1
     }
@@ -133,6 +135,18 @@ dependencies {
     //implementation 'com.pushwoosh:pushwoosh-huawei:6.+'//2.7
     // huawei clever tap/pushwoosh
     //implementation 'com.huawei.hms:push:4.0.3.301'
+
+    implementation 'com.onesignal:OneSignal:[4.0.0, 4.99.99]'//onesignal
+
+    //airship
+    def airshipVersion = "14.4.0"
+    // ADM & FCM push providers
+    implementation "com.urbanairship.android:urbanairship-fcm:$airshipVersion"
+    implementation "com.urbanairship.android:urbanairship-adm:$airshipVersion"
+    // In-App Messaging
+    implementation "com.urbanairship.android:urbanairship-automation:$airshipVersion"
+    // Message Center
+    implementation "com.urbanairship.android:urbanairship-message-center:$airshipVersion"
 }
 //huawei
 //apply plugin: 'com.huawei.agconnect'//Add This at the bottom of the files

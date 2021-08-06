@@ -25,6 +25,7 @@ import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.inappmessaging.FirebaseInAppMessaging;
 import com.google.firebase.installations.FirebaseInstallations;
 
+import com.onesignal.OneSignal;
 import com.pushwoosh.Pushwoosh;
 import com.pushwoosh.inbox.PushwooshInbox;
 import com.pushwoosh.inbox.ui.PushwooshInboxUi;
@@ -33,6 +34,7 @@ import com.undostres.inactiveNotification.databinding.ActivityMainBinding;
 
 import com.clevertap.android.sdk.CTInboxListener;
 import com.clevertap.android.sdk.CTInboxStyleConfig;
+import com.urbanairship.UAirship;
 /*
 //huawei
 import com.huawei.agconnect.config.AGConnectServicesConfig;
@@ -50,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
     private FirebaseInAppMessaging mInAppMessaging;
     private CleverTapAPI cleverTapDefaultInstance;
     private ActivityMainBinding binding;
+    private static final String ONESIGNAL_APP_ID = "fca7d98e-46ba-4c55-951b-a6c14ee817cf";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +82,20 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
         //checkWhiteListNotification();
         huaweiServices();
         startInAppMsg();
+        oneSignal();
+        ariship();
+    }
+
+    void ariship(){
+        UAirship.shared().getPushManager().setUserNotificationsEnabled(true);
+    }
+    void oneSignal(){
+        // Enable verbose OneSignal logging to debug issues if needed.
+        OneSignal.setLogLevel(OneSignal.LOG_LEVEL.VERBOSE, OneSignal.LOG_LEVEL.NONE);
+
+        // OneSignal Initialization
+        OneSignal.initWithContext(this);
+        OneSignal.setAppId(ONESIGNAL_APP_ID);
     }
 
     void huaweiServices(){
@@ -183,6 +200,7 @@ public class MainActivity extends AppCompatActivity implements CTInboxListener, 
             }
         });
 
+        CleverTapAPI.setDebugLevel(CleverTapAPI.LogLevel.DEBUG);
     }
 
     private void startInAppMsg() {

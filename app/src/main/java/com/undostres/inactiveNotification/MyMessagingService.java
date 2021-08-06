@@ -19,6 +19,7 @@ import com.clevertap.android.sdk.pushnotification.NotificationInfo;
 import com.gamooga.targetact.client.TargetActClient;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
+import com.urbanairship.push.fcm.AirshipFirebaseIntegration;
 
 import java.util.Map;
 
@@ -68,8 +69,12 @@ public class MyMessagingService extends FirebaseMessagingService {
             // Check if message contains a notification payload.
             if (remoteMessage.getNotification() != null) {
                 //Log.d(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
+                CleverTapAPI.getDefaultInstance(this).pushEvent("TestPushInCleverTap Event");
                 sendNotification(remoteMessage.getNotification().getTitle(),remoteMessage.getNotification().getBody());
             }
+
+            AirshipFirebaseIntegration.processMessageSync(getApplicationContext(), remoteMessage);
+
         } catch (Throwable t) {
             //Logger.d("Error parsing FCM message", t);
         }
